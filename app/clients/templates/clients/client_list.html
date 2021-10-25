@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+{% block head_title %}
+Clients -
+{% endblock head_title %}
+
+
+
+{% block content %}
+
+<div class="container">
+
+    <ol>
+        {% for object in object_list %}
+
+        <li>
+            <a href="{% url 'clients:client-detail' object.pk %}">
+                {{object.get_full_name}}
+            </a>
+        </li>
+        {% endfor %}
+
+    </ol>
+
+
+</div>
+
+{% endblock content %}

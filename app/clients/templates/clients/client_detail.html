@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+{% block head_title %}
+{{object}} -
+{% endblock head_title %}
+
+
+
+{% block content %}
+
+<div class="container">
+
+    <h1>{{object}}</h1>
+    <hr>
+    <div class="card"
+        style="max-width: 28rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{object.location}}</h5>
+            <p class="card-text">{{object.phone}}</p>
+            <hr>
+            <a href="{% url 'clients:client-update' object.pk %}"
+                class="btn btn-primary">Edit</a>
+        </div>
+    </div>
+
+</div>
+
+{% endblock content %}
